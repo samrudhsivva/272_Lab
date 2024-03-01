@@ -1,0 +1,93 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>canvas</title>
+</head>
+
+<body>
+<canvas id="canvas" height="1000px" width="1000px" border="1px dotted black">display if browser does not support html canvas</canvas>
+<script>
+
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+
+function drawFace(){
+context.beginPath();
+context.arc(200,200,60,0,2*Math.PI);
+context.stroke();
+};
+
+function drawLeftEye(){
+context.beginPath();
+context.arc(172,200,15,0,2*Math.PI);
+context.stroke();
+
+context.beginPath();
+context.arc(172,200,7,0,2*Math.PI);
+context.stroke();
+};
+
+function drawRightEye(){
+context.beginPath();
+context.arc(228,200,15,0,2*Math.PI);
+context.stroke();
+
+context.beginPath();
+context.arc(228,200,7,0,2*Math.PI);
+context.stroke();
+};
+
+function drawLeftEar(){
+context.beginPath();
+context.moveTo(180, 143);  //moves right point(right, down)
+context.bezierCurveTo(150,50,120,80,140,190);
+context.stroke();
+  
+  context.beginPath();
+context.moveTo(168, 150);  //moves right point(right, down)
+context.bezierCurveTo(150,100,140,80,150,166);
+context.stroke();
+};
+
+function drawRightEar(){
+context.beginPath();
+context.moveTo(257, 180);  //moves right point(right, down)
+context.bezierCurveTo(270,50,220,80,210,140);
+context.stroke();
+  
+context.beginPath();
+context.moveTo(245, 160);  //moves right point(right, down)
+context.bezierCurveTo(250,70,240,100,220,143);
+context.stroke();
+};
+
+function drawNose(){
+  context.beginPath();
+  context.arc(200,217,9,0, 2*Math.PI);
+  context.stroke();
+};
+
+function drawMouth(){
+  context.beginPath();
+  context.arc(200,235,19,0, Math.PI);
+  context.lineTo(219, 235);
+  context.stroke();
+   
+ context.beginPath();
+  context.moveTo(215, 247);
+  context.bezierCurveTo(215, 240,180,240, 185, 247); 
+  context.stroke();
+
+};
+
+drawFace();
+drawLeftEye();
+drawRightEye();
+drawLeftEar();
+drawRightEar();
+drawNose();
+drawMouth();</script>
+</body>
+</html>
